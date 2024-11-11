@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    position: relative; /* Para posicionar os eixos em relação ao cubo */
+}
+
+.eixos {
+    position: absolute;
+    width: 200px; /* Largura total dos eixos */
+    height: 200px; /* Altura total dos eixos */
+}
+
+.eixo {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    padding: 5px;
+}
+
+.eixo-x {
+    width: 2px; /* Espessura do eixo X */
+    height: 200px; /* Comprimento do eixo X */
+    background-color: red; /* Cor do eixo X */
+    top: -100px; /* Posiciona o eixo X no centro verticalmente */
+    left: 100px; /* Posiciona o eixo X no centro horizontalmente */
+}
+
+.eixo-y {
+    width: 2px; /* Espessura do eixo Y */
+    height: 200px; /* Comprimento do eixo Y */
+    background-color: green; /* Cor do eixo Y */
+    top: 100px; /* Posiciona o eixo Y no centro verticalmente */
+    left: -100px; /* Posiciona o eixo Y no centro horizontalmente */
+}
+
+.eixo-z {
+    width: 2px; /* Espessura do eixo Z */
+    height: 200px; /* Comprimento do eixo Z */
+    background-color: blue; /* Cor do eixo Z */
+    top: -100px; /* Posiciona o eixo Z no centro verticalmente */
+    left: -100px; /* Posiciona o eixo Z no centro horizontalmente */
+}
+
+.cubo {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotacao 5s infinite linear;
+}
+
+.face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.face1 { background-color: rgba(255, 0, 0, 0.7); transform: rotateY(0deg) translateZ(50px); }
+.face2 { background-color: rgba(0, 255, 0, 0.7); transform: rotateY(90deg) translateZ(50px); }
+.face3 { background-color: rgba(0, 0, 255, 0.7); transform: rotateY(180deg) translateZ(50px); }
+.face4 { background-color: rgba(255, 255, 0, 0.7); transform: rotateY(-90deg) translateZ(50px); }
+.face5 { background-color: rgba(255, 165, 0, 0.7); transform: rotateX(90deg) translateZ(50px); }
+.face6 { background-color: rgba(128, 0, 128, 0.7); transform: rotateX(-90deg) translateZ(50px); }
+
+@keyframes rotacao {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
